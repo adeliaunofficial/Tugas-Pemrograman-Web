@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Media Interaktif Perkuliahan Responsif">
+        <title>Media Interaktif Perkuliahan Responsif</title>
+
+        <link rel="stylesheet" href="./03-tugas-style.css">
+    </head>
+
+    <body>
+        <main>
+            <article class="media-card media-card--featured is-active">
+
+            <picture  class="media-card__picture">
+                <source media="(min-width: 768px)" srcset="./assets/images/poster-large.webp">
+                <source media="(max-width: 767px)" srcset="./assets/images/poster-small.webp">
+                <img class="media-card__image" src="./assets/images/poster-video.png" alt="Sampul Pembelajaran Kuliah">
+            </picture>
+
+            <div class="media-card__content">
+                <h1 class="media-card__title">
+                    Media Interaktif Perkuliahan Responsif
+                </h1>
+
+                <p class="media-card__description">
+                    Media pembelajaran digital yang memadukan gambar, video, dan audio dalam satu halaman responsif.
+                </p>
+            </div>
+
+            <video class="media-card__video" controls preload="metadata" poster="./assets/images/poster-video.png">
+                <source src="./video-kuliah.webm" type="video/webm">
+                <source src="./video-kuliah.mp4" type="video/mp4">
+
+            Browser Anda Tidak mendukung pemutaran video HTML5.
+            </video>
+
+            <audio class="media-card__audio" controls preload="metadata">
+                <source src="./MARS TEKNIK UNHAS 2025 - Fakultas Teknik UNHAS official (128k).mp3" type="audio/mpeg">
+
+            Browser Anda Tidak mendukung pemutaran audio HTML5.
+            </audio>
+
+            </article>
+        </main>
+    </body>
+</html>

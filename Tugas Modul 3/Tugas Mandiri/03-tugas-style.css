@@ -1,0 +1,63 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Card */
+.media-card {
+    background-color: #ffffff;
+    max-width: 700px;
+    margin: 40px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+/* Hover */
+.media-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.media-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Media */
+/* Media */
+.media-card__picture,
+.media-card__image,
+.media-card__video {
+    width: 100%;
+    display: block;
+}
+
+.media-card__picture {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.media-card__image {
+    height: 100%;
+    object-fit: cover;
+}
+
+.media-card__video {
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background-color: #000000;
+}
+
+.media-card__audio {
+    width: 100%;
+    margin-top: 20px;
+}
+/* Specificity */
+.media-card.is-active .media-card__description {
+    color: #1a73e8;
+    font-weight: 600;
+}
