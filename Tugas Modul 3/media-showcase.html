@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Media Showcase</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+        <article class="showcase-card showcase-card--featured">
+
+            <picture>
+                <source media="(min-width: 768px)" srcset="./assets/images/poster-large.webp">
+                <source media="(max-width: 767px)" srcset="./assets/images/poster-small.webp">
+                <img src="./assets/images/poster-video.png"
+                alt="Cover video pembelajaran Client-side Logic">
+            </picture>
+
+            <video class="showcase-card__media" controls perload="metadata" poster="./assets/images/poster-video.png">
+                <source src="./Tugas Video Modul 3.mp4" type="video/mp4">
+                Browser Anda tidak mendukung pemutaran video ini.
+            </video>
+
+            <div class="showcase-card__content">
+                <h1 class="showcase-card__title">
+                    Video Ajar: Client-Side Logic
+                </h1>
+
+                <p class="showcase-card__desciption">
+                    Materi pembelajaran mengenai logika dalam pemrograman pada sisi klien.
+                </p>
+
+                <audio class="showcase-card__audio-player" controls preload="metadata">
+                    <source src="./assets/audios/penjelasan.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung pemutaran audio HTML5 natif.
+                </audio>
+            </div>
+        </article>
+    </body>
+</html>
