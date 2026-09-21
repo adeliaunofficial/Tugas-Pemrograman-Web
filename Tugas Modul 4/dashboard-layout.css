@@ -1,0 +1,250 @@
+/* =========================
+   CSS RESET
+   ========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================
+   GLOBAL
+   ========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f0e6;
+    color: #3d2b1f;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   HEADER NAVIGATION
+   ========================= */
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #800000;
+    color: #f5f0e6;
+
+    padding: 18px 30px;
+}
+
+.main-nav__logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.main-nav__menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+
+.main-nav__menu a {
+    color: #f5f0e6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.main-nav__menu a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+/* =========================
+   DASHBOARD GRID
+   ========================= */
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+
+/* =========================
+   SIDEBAR
+   ========================= */
+
+.dashboard-sidebar {
+    background-color: #800000;
+    color: #f5f0e6;
+
+    padding: 24px;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 10px rgba(60, 30, 20, 0.15);
+}
+
+.dashboard-sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.dashboard-sidebar p {
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
+.main-content {
+    background-color: #fffaf0;
+
+    padding: 24px;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 10px rgba(60, 30, 20, 0.12);
+}
+
+.main-content h2 {
+    color: #800000;
+    margin-bottom: 12px;
+}
+
+.main-content > p {
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   GRID MIKRO KARTU
+   ========================= */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+
+/* =========================
+   KARTU BOOTSTRAP
+   ========================= */
+
+.cards-grid .card {
+    background-color: #fffdf7;
+    border: 1px solid #d8c7b8;
+    border-radius: 12px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.cards-grid .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(60, 30, 20, 0.15);
+}
+
+.cards-grid .card-title {
+    color: #800000 !important;
+}
+
+.cards-grid .display-5 {
+    color: #800000;
+    font-weight: bold;
+}
+
+
+/* =========================
+   TOMBOL MAROON
+   ========================= */
+
+.btn-maroon {
+    color: #800000;
+    border: 1px solid #800000;
+    background-color: transparent;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-maroon:hover {
+    color: #f5f0e6;
+    background-color: #800000;
+    border-color: #800000;
+}
+
+
+/* =========================
+   TABLET / DESKTOP
+   ========================= */
+
+@media (min-width: 768px) {
+
+    .dashboard-container {
+        grid-template-columns: 250px 1fr;
+
+        grid-template-areas:
+            "sidebar main-content";
+    }
+
+    .dashboard-sidebar {
+        grid-area: sidebar;
+    }
+
+    .main-content {
+        grid-area: main-content;
+    }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 767px) {
+
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 14px 20px;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .main-nav__logo {
+        font-size: 1.4rem;
+        margin: 0;
+    }
+
+    .main-nav__menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-nav__menu a {
+        font-size: 0.95rem;
+    }
+
+    .dashboard-container {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+        padding: 0 15px;
+    }
+}
