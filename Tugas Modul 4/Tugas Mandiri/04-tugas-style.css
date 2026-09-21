@@ -1,0 +1,347 @@
+/* =========================
+   CSS RESET
+   ========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================
+   GLOBAL
+   ========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f0e6;
+    color: #3d2b1f;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   HEADER FLEXBOX
+   ========================= */
+
+.journal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #800000;
+    color: #f5f0e6;
+
+    padding: 18px 30px;
+}
+
+.journal-header__logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.journal-header__menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    list-style: none;
+}
+
+.journal-header__menu a {
+    color: #f5f0e6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.journal-header__menu a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+/* =========================
+   LAYOUT UTAMA
+   MOBILE-FIRST
+   ========================= */
+
+.journal-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+
+/* =========================
+   SIDEBAR KIRI
+   ========================= */
+
+.journal-sidebar {
+    background-color: #800000;
+    color: #f5f0e6;
+
+    padding: 24px;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 10px rgba(60, 30, 20, 0.15);
+}
+
+.journal-sidebar h2 {
+    margin-bottom: 18px;
+    font-size: 1.3rem;
+}
+
+.journal-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.journal-sidebar li {
+    margin-bottom: 10px;
+}
+
+.journal-sidebar a {
+    color: #f5f0e6;
+    text-decoration: none;
+}
+
+.journal-sidebar a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   KOLOM TENGAH
+   ========================= */
+
+.journal-content {
+    background-color: #fffaf0;
+
+    padding: 24px;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 10px rgba(60, 30, 20, 0.12);
+}
+
+.journal-content h2 {
+    color: #800000;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   GRID MIKRO ARTIKEL
+   ========================= */
+
+.articles-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================
+   KARTU BOOTSTRAP
+   ========================= */
+
+.articles-grid .card {
+    background-color: #fffdf7;
+    border: 1px solid #d8c7b8;
+    border-radius: 12px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.articles-grid .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(60, 30, 20, 0.15);
+}
+
+.articles-grid .card-title {
+    color: #800000;
+    font-size: 1.1rem;
+}
+
+.articles-grid .card-text {
+    color: #5a4638;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   TOMBOL MAROON
+   ========================= */
+
+.btn-maroon {
+    display: inline-block;
+
+    color: #800000;
+    background-color: transparent;
+
+    border: 1px solid #800000;
+    border-radius: 5px;
+
+    padding: 6px 12px;
+
+    text-decoration: none;
+}
+
+.btn-maroon:hover {
+    color: #f5f0e6;
+    background-color: #800000;
+    border-color: #800000;
+}
+
+
+/* =========================
+   KOLOM KANAN
+   ========================= */
+
+.journal-right {
+    background-color: #fffaf0;
+
+    padding: 24px;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 10px rgba(60, 30, 20, 0.12);
+}
+
+.journal-right h2,
+.journal-right h3 {
+    color: #800000;
+    margin-bottom: 12px;
+}
+
+.journal-right p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.journal-right ul {
+    padding-left: 20px;
+}
+
+.journal-right li {
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 991px) {
+
+    .journal-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 20px;
+        text-align: center;
+    }
+
+    .journal-header__logo {
+        font-size: 1.4rem;
+    }
+
+    .journal-header__menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 7px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .journal-header__menu a {
+        font-size: 0.95rem;
+    }
+
+    .journal-layout {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+        padding: 0 15px;
+    }
+
+    .journal-sidebar,
+    .journal-content,
+    .journal-right {
+        width: 100%;
+    }
+
+    .journal-right {
+        display: none;
+    }
+}
+
+
+/* =========================
+   DESKTOP
+   992px+
+   ========================= */
+
+@media (min-width: 992px) {
+
+    .journal-layout {
+        grid-template-columns: 200px 1fr 220px;
+    }
+
+    .journal-right {
+        display: block;
+    }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 767px) {
+
+    .journal-header {
+        flex-direction: column;
+        align-items: center;
+
+        padding: 14px 20px;
+        gap: 10px;
+
+        text-align: center;
+    }
+
+    .journal-header__logo {
+        font-size: 1.4rem;
+    }
+
+    .journal-header__menu {
+        flex-direction: column;
+        align-items: center;
+
+        gap: 7px;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .journal-header__menu a {
+        font-size: 0.95rem;
+    }
+
+    .journal-layout {
+        grid-template-columns: 1fr;
+
+        margin-top: 20px;
+        padding: 0 15px;
+    }
+}
